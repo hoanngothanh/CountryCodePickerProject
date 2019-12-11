@@ -248,7 +248,7 @@ class CountryCodeAdapter extends RecyclerView.Adapter<CountryCodeAdapter.Country
 
         public void setCountry(CCPCountry ccpCountry) {
             if (ccpCountry != null) {
-//                divider.setVisibility(View.GONE);
+                divider.setVisibility(View.GONE);
                 textView_name.setVisibility(View.VISIBLE);
                 textView_code.setVisibility(View.VISIBLE);
                 if (codePicker.isCcpDialogShowPhoneCode()) {

@@ -31,7 +31,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="18dp"
                     android:layout_margin="0.5dp"
-                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/flag_india" />
             </LinearLayout>
         </LinearLayout>
@@ -46,8 +46,9 @@
             android:layout_toRightOf="@+id/linear_flag_holder"
             android:singleLine="true"
             android:text="(IN) +91"
+            android:fontFamily="@font/arial"
             android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <ImageView
             android:id="@+id/imageView_arrow"
