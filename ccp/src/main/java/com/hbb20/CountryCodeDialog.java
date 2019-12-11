@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.view.View;
@@ -82,7 +83,7 @@ class CountryCodeDialog {
         List<CCPCountry> masterCountries = CCPCountry.getCustomMasterCountryList(context, codePicker);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.getWindow().setContentView(R.layout.layout_picker_dialog);
-
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         //keyboard
         if (codePicker.isSearchAllowed() && codePicker.isDialogKeyboardAutoPopup()) {
             dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);

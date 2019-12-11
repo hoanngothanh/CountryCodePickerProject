@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rl_holder"
     android:layout_width="match_parent"
+    android:background="@drawable/dialog_bg"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="16dp">
 
     <RelativeLayout
+        android:visibility="gone"
         android:id="@+id/rl_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -15,9 +19,12 @@
             android:id="@+id/textView_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_toLeftOf="@+id/img_dismiss"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
             android:layout_toStartOf="@+id/img_dismiss"
+            android:layout_toLeftOf="@+id/img_dismiss"
             android:text="@string/select_country"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/secondary_text_light" />
@@ -43,12 +50,14 @@
         android:layout_below="@+id/rl_title">
 
         <EditText
+            android:drawableLeft="@drawable/ic_search_black_24dp"
             android:id="@+id/editText_search"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/edt_bg"
             android:layout_toLeftOf="@+id/img_clear_query"
             android:layout_toStartOf="@+id/img_clear_query"
-            android:hint="@string/search_hint"
+            android:hint="@string/select_country"
             android:imeOptions="actionSearch"
             android:singleLine="true"
             android:inputType="textNoSuggestions"
@@ -68,11 +77,20 @@
             android:src="@drawable/ic_backspace_black_24dp" />
     </RelativeLayout>
 
+    <View
+        android:layout_marginTop="4dp"
+        android:background="@android:color/black"
+        android:id="@+id/search_divider"
+        android:layout_below="@id/rl_query_holder"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_countryDialog"
+        android:layout_marginTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/rl_query_holder"
+        tools:listitem="@layout/layout_recycler_country_tile"
+        android:layout_below="@+id/search_divider"
         android:dividerHeight="2dp" />
 
     <com.futuremind.recyclerviewfastscroll.FastScroller
